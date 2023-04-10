@@ -6,8 +6,8 @@ getAPIBooks();
 async function getAPIBooks() {
   const response = await fetch(APIEndpoint);
   books = await response.json();
-  console.table(books);
+  // console.table(books);
   let discountBooks = applyDiscount(books);
-  
+
   showBooksOnScreen(discountBooks);
 }
