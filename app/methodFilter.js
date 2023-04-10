@@ -6,9 +6,10 @@ function filterBooks() {
   const elementBtn = document.getElementById(this.id);
   const category = elementBtn.value;
 
-  let filteredBooks = books.filter(book => {
-    return book.categoria == category;
-  });
+  let filteredBooks = category == 'disponivel' ? 
+    books.filter(book => book.quantidade > 0) : 
+    books.filter(book => book.categoria == category
+  );
 
   // console.table(filteredBooks);
   showBooksOnScreen(filteredBooks);
